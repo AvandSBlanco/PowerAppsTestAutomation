@@ -69,7 +69,7 @@ namespace Microsoft.PowerApps.TestAutomation.Browser
             {
                 options.AddArgument("--user-agent=" + UserAgentValue);
             }
-
+            options.AddArgument("--no-sandbox");
             return options;
         }
        
