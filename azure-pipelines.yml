@@ -68,6 +68,8 @@ jobs:
       Write-Host "Dónde estoy?";
       Get-Location;
       Dir;
+      Dir $(LocalProjectName)\;
+      Dir $(LocalProjectName)\$(TestURLs);
   #- template: localsteps.yml # Provide optional local YAML template here
   #- template: frameworksteps.yml@PowerAppsTestAutomation
   #  parameters:
@@ -76,6 +78,6 @@ jobs:
   #    OnlineUrl: $(PortalUrl)
   #    BrowserType: ${{ parameters.BrowserType }}
   #    # File location format is /s/TeamProjectName/FilePathToTestAutomationURLs.json
-  #    TestAutomationURLFilePath: $(TestURLs)
+  #    TestAutomationURLFilePath: $(LocalProjectName)\$(TestURLs)
   #    UsePrivateMode: $(PrivateMode)
   #    LoginMethod: ${{ parameters.LoginMethod }}
