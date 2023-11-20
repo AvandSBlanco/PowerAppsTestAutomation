@@ -64,10 +64,6 @@ jobs:
   steps:
   - checkout: self
   - checkout: PowerAppsTestAutomation
-  - task: UseDotNet@2
-    inputs:
-      packageType: 'sdk'
-      version: '4.x'
   - powershell:
       Write-Host "Dónde estoy?";
       Get-Location;
