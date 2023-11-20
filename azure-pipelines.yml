@@ -64,32 +64,6 @@ jobs:
   steps:
   - checkout: self
   - checkout: PowerAppsTestAutomation
-  - powershell:
-      Write-Host "Dónde estoy?";
-      Get-Location;
-      Dir;
-     # Dir $(LocalProjectName)\;
-     # Dir $(LocalProjectName)\$(TestURLs);
-
-  - pwsh: |
-      Set-Location "C:\Program Files (x86)\Microsoft Visual Studio\Installer\"
-      $InstallPath = "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise"
-      $componentsToAdd = @(
-        "Microsoft.Net.Component.4.6.1.SDK"
-      )
-      [string]$workloadArgs = $componentsToAdd | ForEach-Object {" --add " +  $_}
-      $Arguments = ('/c', "vs_installer.exe", 'modify', '--installPath', "`"$InstallPath`"",$workloadArgs, '--norestart', '--nocache')
-      $process = Start-Process -FilePath cmd.exe -ArgumentList $Arguments -Wait -PassThru -WindowStyle Hidden
-      if ($process.ExitCode -eq 0)
-      {
-          Write-Host "components have been successfully added"
-      }
-      else
-      {
-          Write-Host "components were not installed"
-          exit 1
-      }
-  #- template: localsteps.yml # Provide optional local YAML template here
   - template: frameworksteps.yml@PowerAppsTestAutomation
     parameters:
       OnlineUsername: $(OnlineUsername)
