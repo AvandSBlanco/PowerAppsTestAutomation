@@ -67,14 +67,15 @@ jobs:
   - powershell:
       Write-Host "Dónde estoy?";
       Get-Location;
+      Dir;
   #- template: localsteps.yml # Provide optional local YAML template here
-  - template: frameworksteps.yml@PowerAppsTestAutomation
-    parameters:
-      OnlineUsername: $(OnlineUsername)
-      OnlinePassword: $(OnlinePassword)
-      OnlineUrl: $(PortalUrl)
-      BrowserType: ${{ parameters.BrowserType }}
-      # File location format is /s/TeamProjectName/FilePathToTestAutomationURLs.json
-      TestAutomationURLFilePath: $(TestURLs)
-      UsePrivateMode: $(PrivateMode)
-      LoginMethod: ${{ parameters.LoginMethod }}
+  #- template: frameworksteps.yml@PowerAppsTestAutomation
+  #  parameters:
+  #    OnlineUsername: $(OnlineUsername)
+  #    OnlinePassword: $(OnlinePassword)
+  #    OnlineUrl: $(PortalUrl)
+  #    BrowserType: ${{ parameters.BrowserType }}
+  #    # File location format is /s/TeamProjectName/FilePathToTestAutomationURLs.json
+  #    TestAutomationURLFilePath: $(TestURLs)
+  #    UsePrivateMode: $(PrivateMode)
+  #    LoginMethod: ${{ parameters.LoginMethod }}
