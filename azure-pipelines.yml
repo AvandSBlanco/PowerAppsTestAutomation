@@ -4,11 +4,11 @@ name: PowerAppsTestAutomation-$(date:yyyyMMdd)$(rev:.r)
 
 resources:
   repositories:
-    - repository: PowerAppsTestAutomation
+    - repository: AvandSBlanco
       type: github
       # GitHub Repo(e.g. <FORK>/PowerAppsTestAutomation)
       # Recommended to Fork or Duplicate if custom auth flows are required
-      name: microsoft/PowerAppsTestAutomation
+      name: AvandSBlanco/PowerAppsTestAutomation
       ref: master
       # Name of the GitHub OAuth ADO Service Connection
       endpoint: github.com_AvandSBlanco
