@@ -68,8 +68,8 @@ jobs:
       Write-Host "Dónde estoy?";
       Get-Location;
       Dir;
-      Dir $(LocalProjectName)\;
-      Dir $(LocalProjectName)\$(TestURLs);
+     # Dir $(LocalProjectName)\;
+     # Dir $(LocalProjectName)\$(TestURLs);
   #- template: localsteps.yml # Provide optional local YAML template here
   - template: frameworksteps.yml@PowerAppsTestAutomation
     parameters:
