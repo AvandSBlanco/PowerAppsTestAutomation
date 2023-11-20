@@ -26,7 +26,7 @@ parameters:
  - name: BrowserType
    displayName: Browser Type
    type: string
-   default: All
+   default: Chrome
    values:
    - Chrome
    - All
@@ -54,7 +54,7 @@ jobs:
   - name: PrivateMode
     value: true
     # FileName where TestAutomationURLs are stored in JSON format
-  - name: TestURLs 
+  - name: TestURLs
     value: TestURLs.json
     # Project name of repo containing TestAutomationURLs (spaces should be encoded as %20)
     # Example: Contoso Test Framework --> Contoso%20Test%20Framework
