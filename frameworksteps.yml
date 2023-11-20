@@ -42,7 +42,6 @@ steps:
       inputs:
 
         solution: '${{parameters.RepositoryName}}/PowerAppsTestAutomation.sln'
-        msbuildArgs: '/p:TargetFrameworkVersion="v4.5"'
 
 
     - task: VSTest@2
