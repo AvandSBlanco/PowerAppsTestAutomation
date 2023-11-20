@@ -11,7 +11,7 @@ resources:
       name: microsoft/PowerAppsTestAutomation
       ref: master
       # Name of the GitHub OAuth ADO Service Connection
-      endpoint: <ADO GitHub OAuth Service Connection Name>
+      endpoint: github.com_AvandSBlanco
 
 parameters:
  - name: image
@@ -29,6 +29,7 @@ parameters:
    default: All
    values:
    - Chrome
+   - Firefox
    - All
  - name: LoginMethod
    displayName: Login Type # See: https://docs.microsoft.com/en-us/office365/servicedescriptions/office-365-platform-service-description/user-account-management
@@ -54,7 +55,7 @@ jobs:
   - name: PrivateMode
     value: true
     # FileName where TestAutomationURLs are stored in JSON format
-  - name: TestURLs 
+  - name: TestURLs
     value: TestURLs.json
     # Project name of repo containing TestAutomationURLs (spaces should be encoded as %20)
     # Example: Contoso Test Framework --> Contoso%20Test%20Framework
