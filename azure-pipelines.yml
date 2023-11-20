@@ -64,7 +64,7 @@ jobs:
   steps:
   - checkout: self
   - checkout: PowerAppsTestAutomation
-  - script:
+  - powershell:
       Write-Host "Dónde estoy?";
       Get-Location;
   #- template: localsteps.yml # Provide optional local YAML template here
