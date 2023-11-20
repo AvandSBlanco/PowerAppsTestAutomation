@@ -64,6 +64,10 @@ jobs:
   steps:
   - checkout: self
   - checkout: PowerAppsTestAutomation
+  - task: UseDotNet@2
+    inputs:
+      packageType: 'sdk'
+      version: '4.6'
   - powershell:
       Write-Host "Dónde estoy?";
       Get-Location;
@@ -71,13 +75,15 @@ jobs:
       Dir $(LocalProjectName)\;
       Dir $(LocalProjectName)\$(TestURLs);
   #- template: localsteps.yml # Provide optional local YAML template here
-  #- template: frameworksteps.yml@PowerAppsTestAutomation
-  #  parameters:
-  #    OnlineUsername: $(OnlineUsername)
-  #    OnlinePassword: $(OnlinePassword)
-  #    OnlineUrl: $(PortalUrl)
-  #    BrowserType: ${{ parameters.BrowserType }}
-  #    # File location format is /s/TeamProjectName/FilePathToTestAutomationURLs.json
-  #    TestAutomationURLFilePath: $(LocalProjectName)\$(TestURLs)
-  #    UsePrivateMode: $(PrivateMode)
-  #    LoginMethod: ${{ parameters.LoginMethod }}
+  - template: frameworksteps.yml@PowerAppsTestAutomation
+    parameters:
+      OnlineUsername: $(OnlineUsername)
+      OnlinePassword: $(OnlinePassword)
+      OnlineUrl: $(PortalUrl)
+      BrowserType: ${{ parameters.BrowserType }}
+      # File location format is /s/TeamProjectName/FilePathToTestAutomationURLs.json
+      TestAutomationURLFilePath: $(LocalProjectName)\$(TestURLs)
+      UsePrivateMode: $(PrivateMode)
+      LoginMethod: ${{ parameters.LoginMethod }}
+
+
